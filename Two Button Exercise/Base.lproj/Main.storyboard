@@ -1,24 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MarkerFeltThin.ttf">
+            <string>MarkerFelt-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Two_Button_Exercise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IR4-5Z-KXS">
+                                <rect key="frame" x="16" y="20" width="343" height="111"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-gZ-NSY">
+                                <rect key="frame" x="255" y="126" width="104" height="48"/>
+                                <state key="normal" title="Show Message"/>
+                                <connections>
+                                    <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ci6-fD-BI8"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gd3-ts-kdE">
+                                <rect key="frame" x="16" y="182" width="343" height="388"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTm-XG-kcL">
+                                <rect key="frame" x="16" y="139" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TdR-n2-seo">
+                                <rect key="frame" x="110" y="134" width="51" height="31"/>
+                                <connections>
+                                    <action selector="soundSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hrf-WV-Flk"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hTm-XG-kcL" firstAttribute="centerY" secondItem="TdR-n2-seo" secondAttribute="centerY" id="1vv-WH-M9J"/>
+                            <constraint firstItem="IR4-5Z-KXS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="506-0n-ENF"/>
+                            <constraint firstItem="Gd3-ts-kdE" firstAttribute="top" secondItem="TdR-n2-seo" secondAttribute="bottom" constant="17" id="FIh-oF-Ah5"/>
+                            <constraint firstItem="sw8-gZ-NSY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="JGO-DW-xMr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gd3-ts-kdE" secondAttribute="bottom" constant="97" id="MkM-Oe-uxW"/>
+                            <constraint firstItem="IR4-5Z-KXS" firstAttribute="trailing" secondItem="sw8-gZ-NSY" secondAttribute="trailing" id="ZX6-aC-Jsh"/>
+                            <constraint firstItem="IR4-5Z-KXS" firstAttribute="leading" secondItem="hTm-XG-kcL" secondAttribute="leading" id="e4O-e0-Fis"/>
+                            <constraint firstItem="sw8-gZ-NSY" firstAttribute="trailing" secondItem="Gd3-ts-kdE" secondAttribute="trailing" id="eFj-yd-9Y7"/>
+                            <constraint firstItem="TdR-n2-seo" firstAttribute="leading" secondItem="hTm-XG-kcL" secondAttribute="trailing" constant="8" symbolic="YES" id="fWD-I5-fcH"/>
+                            <constraint firstItem="hTm-XG-kcL" firstAttribute="leading" secondItem="Gd3-ts-kdE" secondAttribute="leading" id="lTx-aG-AZo"/>
+                            <constraint firstItem="hTm-XG-kcL" firstAttribute="top" secondItem="IR4-5Z-KXS" secondAttribute="bottom" constant="8" symbolic="YES" id="pFG-n3-4S8"/>
+                            <constraint firstItem="sw8-gZ-NSY" firstAttribute="baseline" secondItem="hTm-XG-kcL" secondAttribute="firstBaseline" id="t3k-SG-kh4"/>
+                            <constraint firstItem="IR4-5Z-KXS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uxw-4q-Qxv"/>
+                            <constraint firstItem="Gd3-ts-kdE" firstAttribute="top" secondItem="sw8-gZ-NSY" secondAttribute="bottom" constant="8" symbolic="YES" id="xbp-1H-Q6f"/>
+                            <constraint firstItem="IR4-5Z-KXS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yUL-HM-PRh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="awesomeImage" destination="Gd3-ts-kdE" id="pFp-o6-d3c"/>
+                        <outlet property="messageLabel" destination="IR4-5Z-KXS" id="ZUc-s4-EPQ"/>
+                        <outlet property="soundSwitch" destination="TdR-n2-seo" id="GzQ-6g-BBP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
